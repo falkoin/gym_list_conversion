@@ -18,7 +18,7 @@ In trampolin sports results are reported through a result book. These can be fou
 	- Last corresponds to the last page of the resultlist (if there is only one page this is equal to first)
 - Run full_processing.py
 
-### Description	
+### Procedure	
 
 The script will convert the PDF pages to a single txt file per entry in data.csv, which is then converted to a csv table containing the data.
 
