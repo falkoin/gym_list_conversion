@@ -1,0 +1,8 @@
+.DS_Store
+*.pdf
+*.txt
+Table.csv
+data Kopie.csv
+*.ipynb
+*.xlsx
+*Results*.csv

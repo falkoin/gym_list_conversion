@@ -1,0 +1,23 @@
+Association,Event Phase,Output,Input,First,Last
+europe,qual,EM2022_Rimini_Results_Women_Qual,"28TH EUROPEAN CHAMPIONSHIPS IN TRAMPOLINE GYMNASTICS 2022 Rimini Media.pdf",34,37
+europe,semi,EM2022_Rimini_Results_Women_Semi,"28TH EUROPEAN CHAMPIONSHIPS IN TRAMPOLINE GYMNASTICS 2022 Rimini Media.pdf",45,45
+europe,final,EM2022_Rimini_Results_Women_Finals,"28TH EUROPEAN CHAMPIONSHIPS IN TRAMPOLINE GYMNASTICS 2022 Rimini Media.pdf",48,48
+europe,qual,EM2022_Rimini_Results_Men_Qual,"28TH EUROPEAN CHAMPIONSHIPS IN TRAMPOLINE GYMNASTICS 2022 Rimini Media.pdf",129,133
+europe,semi,EM2022_Rimini_Results_Men_Semi,"28TH EUROPEAN CHAMPIONSHIPS IN TRAMPOLINE GYMNASTICS 2022 Rimini Media.pdf",141,141
+europe,final,EM2022_Rimini_Results_Men_Finals,"28TH EUROPEAN CHAMPIONSHIPS IN TRAMPOLINE GYMNASTICS 2022 Rimini Media.pdf",144,144
+world,qual,GTR_2021WCH_Baku_Results_Men_Qual,Load_Comp_Data.pdf,280,283
+world,semi,GTR_2021WCH_Baku_Results_Men_Semi,Load_Comp_Data.pdf,369,369
+world,final,GTR_2021WCH_Baku_Results_Men_Final,Load_Comp_Data.pdf,385,385
+world,qual,GTR_2021WCH_Baku_Results_Women_Qual,Load_Comp_Data.pdf,28,30
+world,semi,GTR_2021WCH_Baku_Results_Women_Semi,Load_Comp_Data.pdf,88,88
+world,final,GTR_2021WCH_Baku_Results_Women_Final,Load_Comp_Data.pdf,104,104
+world,qual,GTR_Tokyo2019_Results_Men_Qual,GTR_Tokyo2019_MediaBook.pdf,109,113
+world,semi,GTR_Tokyo2019_Results_Men_Semi,GTR_Tokyo2019_MediaBook.pdf,118,118
+world,final,GTR_Tokyo2019_Results_Men_Final,GTR_Tokyo2019_MediaBook.pdf,122,122
+world,qual,GTR_Tokyo2019_Results_Women_Qual,GTR_Tokyo2019_MediaBook.pdf,49,52
+world,semi,GTR_Tokyo2019_Results_Women_Semi,GTR_Tokyo2019_MediaBook.pdf,57,57
+world,final,GTR_Tokyo2019_Results_Women_Final,GTR_Tokyo2019_MediaBook.pdf,61,61
+world,qual,Tokyo_2020_Results_Men_Qual,Tokyo 2020_Results_Book.pdf,59,59
+world,final,Tokyo_2020_Results_Men_Final,Tokyo 2020_Results_Book.pdf,60,60
+world,qual,Tokyo_2020_Results_Women_Qual,Tokyo 2020_Results_Book.pdf,57,57
+world,final,Tokyo_2020_Results_Women_Final,Tokyo 2020_Results_Book.pdf,58,58
