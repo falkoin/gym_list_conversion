@@ -3,7 +3,6 @@
 *.txt
 Table.csv
 data Kopie.csv
-*.ipynb
 *.xlsx
 *Results*.csv
 *.db
