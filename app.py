@@ -77,22 +77,23 @@ exercise = st.sidebar.selectbox(
      (['All'] + [str(i) for i in np.arange(0, len(df_select))] )
     )
 
-athlete_name = athlete.split()
-athlete_name = athlete_name[0].capitalize() + ' ' + athlete_name[1]
-phase_select = df_select["Phase"].loc[int(exercise)]
-routine_select = df_select["Routine"].loc[int(exercise)]
+if exercise is not 'All':
+    athlete_name = athlete.split()
+    athlete_name = athlete_name[0].capitalize() + ' ' + athlete_name[1]
+    phase_select = df_select["Phase"].loc[int(exercise)]
+    routine_select = df_select["Routine"].loc[int(exercise)]
 
-sql_str = "SELECT * from '" + event_str.replace(" ", "_").lower() + "_" + gender.lower() + "' where name=" + "'" + athlete_name + "' and phase=" + "'" + phase_select + "' and Routine=" + "'" + routine_select + "'"
-# sql_str = 'SELECT * from "2021_world_championships_men"'
+    sql_str = "SELECT * from '" + event_str.replace(" ", "_").lower() + "_" + gender.lower() + "' where name=" + "'" + athlete_name + "' and phase=" + "'" + phase_select + "' and Routine=" + "'" + routine_select + "'"
+    # sql_str = 'SELECT * from "2021_world_championships_men"'
 
-# st.write(sql_str)
-df_athlete = pd.read_sql(sql_str, connection)
-# st.write(df_athlete)
-hash_val = df_athlete["Hash"][0]
+    # st.write(sql_str)
+    df_athlete = pd.read_sql(sql_str, connection)
+    # st.write(df_athlete)
+    hash_val = df_athlete["Hash"].iloc[0]
 
-sql_str = "SELECT * from '" + hash_val + "'"
-df_exercisedata = pd.read_sql(sql_str, connection)
-df_exercisedata = df_exercisedata.astype(float)
+    sql_str = "SELECT * from '" + hash_val + "'"
+    df_exercisedata = pd.read_sql(sql_str, connection)
+    df_exercisedata = df_exercisedata.astype(float)
 # st.write(df_exercisedata)
 
 left_column, right_column = st.columns(2)
@@ -115,12 +116,88 @@ with left_column:
             
         )
         st.plotly_chart(fig)
+        # st.write(df_exercisedata)
+        if exercise is not 'All':
+            bar_text = df_exercisedata["index"]+1
+            fig3 = px.bar(
+                df_exercisedata,
+                x=bar_text,
+                y='T',
+                title='Time of Flight'
+                )
+            fig3.update_xaxes(title_text='Jumps')
+            fig3.update_yaxes(title_text='Time (s)')
+            st.plotly_chart(fig3)
+        
 
 with right_column:
-    fig2 = px.scatter(
-        df_exercisedata,
-        x='x',
-        y='y'
-        )
-    fig2.update_layout(xaxis_range=[-214, 214], yaxis_range=[-107, 107])
-    st.plotly_chart(fig2)
+    if exercise is not 'All':
+        scatter_text = df_exercisedata["index"]+1
+        fig2 = px.scatter(
+            df_exercisedata,
+            x='x',
+            y='y',
+            text=scatter_text,
+            color='H',
+            range_color=(0.7,1)
+            )
+        fig2.update_traces(textposition='bottom right')
+        fig2.update_layout(
+            xaxis_range=[-214, 214],
+            yaxis_range=[-107, 107],
+            xaxis_visible=False,
+            xaxis_showticklabels=False,
+            yaxis_visible=False,
+            yaxis_showticklabels=False,
+            coloraxis={"colorscale": [[0, "red"], [0.5, "yellow"], [1, "green"]]}
+            )
+        fig2.add_trace(
+                px.line(
+                    x=[54, 54, -54, -54, 54],
+                    y=[54, -54, -54, 54, 54],
+                    color_discrete_sequence=['#7f7f7f']
+                ).data[0]
+            )
+        fig2.add_trace(
+                px.line(
+                    x=[214, -214],
+                    y=[54, 54],
+                    color_discrete_sequence=['#7f7f7f']
+                ).data[0]
+            ) 
+        fig2.add_trace(
+                px.line(
+                    x=[214, -214],
+                    y=[-54, -54],
+                    color_discrete_sequence=['#7f7f7f']
+                ).data[0]
+            )
+        fig2.add_trace(
+                px.line(
+                    x=[-107.5, -107.5],
+                    y=[-107, 107],
+                    color_discrete_sequence=['#7f7f7f']
+                ).data[0]
+            )      
+        fig2.add_trace(
+                px.line(
+                    x=[107.5, 107.5],
+                    y=[-107, 107],
+                    color_discrete_sequence=['#7f7f7f']
+                ).data[0]
+            )
+        fig2.add_trace(
+                px.line(
+                    x=[-35, 35],
+                    y=[0, 0],
+                    color_discrete_sequence=['#7f7f7f']
+                ).data[0]
+            )
+        fig2.add_trace(
+                px.line(
+                    x=[0, 0],
+                    y=[-35, 35],
+                    color_discrete_sequence=['#7f7f7f']
+                ).data[0]
+            )
+        st.plotly_chart(fig2)
