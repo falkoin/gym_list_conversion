@@ -770,5 +770,5 @@ for idx, row in df_data.iterrows():
 
 connection = sqlite3.connect("trampoline.db")
 cursor = connection.cursor()
-df_main.to_sql(name="ranklists", con=connection)
+df_main.to_sql(name="ranklists", con=connection, if_exists='replace')
 connection.close()
