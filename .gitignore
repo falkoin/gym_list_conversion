@@ -6,3 +6,8 @@ data Kopie.csv
 *.xlsx
 *Results*.csv
 *.db
+WCH_Tokyo_Startlist_Men.csv
+WCH_Tokyo_Startlist_Women.csv
+test.csv
+matchlist.csv
+dat.csv
