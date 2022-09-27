@@ -466,9 +466,12 @@ for idx, row in df_data.iterrows():
                     else:
                         qualified = ' '
 
-                    if routine == '1':
-                        routine = '1st'
-                
+                if routine == '1' or routine == 1:
+                    routine = '1st'
+                # if name == 'ROMERO ROSARIO Noemi':
+                #     print(routine)
+                #     print(type(routine))
+                #     print(len(routine))
                 end_added = float(end_score)
                 df.loc[df_pos] = (rank,
                                   routine,
@@ -537,7 +540,7 @@ for idx, row in df_data.iterrows():
                     total = float(corrected_entry[6])
                     end_score = float(current_entry[12])
 
-                if routine == '2':
+                if routine == '2' or routine == 2:
                     routine = '2nd'
 
                 df.loc[df_pos] = (rank,
